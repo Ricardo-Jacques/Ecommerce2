@@ -5,54 +5,69 @@
 
 @page "/product/{ProductId:guid}"
 
-<MudContainer Class="page-container">
-    <MudStack Row="true">
-        <MudImage Src="\Images\monitor_img.jpg" 
-                  Alt="Foto do produto"
-                  Style="width: 45%;"/>
+@if (_isLoading)
+{
+    <MudProgressLinear />
+}
+else
+{
+    <MudContainer Class="page-container">
+        <MudStack Row="true">
+            <MudImage Src="\Images\monitor_img.jpg" 
+                      Alt="Foto do produto"
+                      Style="width: 45%;"/>
 
-        <MudStack Style="width: 55%; border: 1px solid gray;">
-            <MudStack Row="true">
+            <MudStack Style="width: 55%; border: 1px solid gray;">
                 <MudStack Row="true">
-                    <MudIcon Icon="@Icons.Material.Filled.Star"/>
-                    <MudText>Novo</MudText>
+                    <MudStack Row="true">
+                        <MudIcon Icon="@Icons.Material.Filled.Star"/>
+                        <MudText>Novo</MudText>
+                    </MudStack>
+
+                    <MudStack Row="true">
+                        <MudIcon Icon="@Icons.Material.Filled.CalendarMonth" />
+                        <MudText>12 meses de garantia</MudText>
+                    </MudStack>
                 </MudStack>
 
-                <MudStack Row="true">
-                    <MudIcon Icon="@Icons.Material.Filled.CalendarMonth" />
-                    <MudText>12 meses de garantia</MudText>
+                <MudText Style="font-size: 2rem;">@_productDto.Name</MudText>
+                <MudText>CÓD: @_productDto.Code</MudText>
+
+                <MudStack Spacing="1">
+                    <MudStack Row="true">
+                        <MudIcon Icon="@Icons.Material.Filled.Payment" />
+                        <MudText>@($"De R$ {_productDto.Price.ToString("F2")} por:")</MudText>
+                    </MudStack>
+
+                    <MudText Style="font-size: 2rem; color: rgb(115, 195, 0);">@($"R$ {GetSalePrice()}")</MudText>
+                    <MudText>A vista com 15% de desconto no boleto</MudText>
                 </MudStack>
-            </MudStack>
-
-            <MudText Style="font-size: 2rem;">Monitor Gamer LG 24 Pol, Full HD, IPS, 5Ms, 100Hz, HDMI, 24MS500-B</MudText>
-            <MudText>CÓD: 24MS500-B</MudText>
-
-            <MudStack Spacing="1">
-                <MudStack Row="true">
-                    <MudIcon Icon="@Icons.Material.Filled.Payment" />
-                    <MudText>De R$ 1.139,99 por:</MudText>
-                </MudStack>
-
-                <MudText Style="font-size: 2rem; color: rgb(115, 195, 0);">@($"R$ {_productDto}")</MudText>
-                <MudText>A vista com 15% de desconto no boleto</MudText>
-            </MudStack>
             
-            <MudButton Variant="Variant.Filled"
-                       Color="Color.Success">
-                Comprar
-            </MudButton>
+                <MudButton Variant="Variant.Filled"
+                           Color="Color.Success">
+                    Comprar
+                </MudButton>
+            </MudStack>
         </MudStack>
-    </MudStack>
-</MudContainer>
+    </MudContainer>
+}
 
 @code {
-    [Parameter]
-    public Guid ProductId { get; set; }
+    [Parameter] public Guid ProductId { get; set; }
 
     private ProductDto _productDto = new();
+    private bool _isLoading = false;
 
     protected override async Task OnInitializedAsync()
     {
+        _isLoading = true;
         _productDto = await ProductService.Get(ProductId);
+        _isLoading = false;
+    }
+
+    private string GetSalePrice()
+    {
+        double salePrice = _productDto.Price - _productDto.Price * 0.15;
+        return salePrice.ToString("F2");
     }
 }

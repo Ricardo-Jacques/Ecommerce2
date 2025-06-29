@@ -18,18 +18,18 @@ namespace ECommerce.Server.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<ActionResult<ProductDto>> Get(Guid id)
         {
-            var product = _context.Products.Where(x => x.Id == id)
+            var product = await _context.Products.Where(x => x.Id == id)
                 .Select(x => new ProductDto
                 {
                     Id = x.Id,
                     Name = x.Name,
                     Price = x.Price,
                     Code = x.Code,
-                    Description = x.Description
-                });
+                    Photo = x.Photo
+                }).FirstOrDefaultAsync();
 
             return Ok(product);
         }
@@ -44,7 +44,7 @@ namespace ECommerce.Server.Controllers
                     Name = x.Name,
                     Price = x.Price,
                     Code = x.Code,
-                    Description = x.Description
+                    Photo = x.Photo
                 })
                 .ToListAsync();
 

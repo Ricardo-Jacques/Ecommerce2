@@ -12,14 +12,16 @@
 } else
 {
     <PageTitle>Home</PageTitle>
-
-    @foreach (var product in _productsList)
-    {
-        <MudText Typo="Typo.h5">@product.Name</MudText>
-        <MudText Typo="Typo.subtitle2">@product.Price.ToString("C")</MudText>
-        <MudButton OnClick="() => GoToProductPage(product.Id)">Ver Produto</MudButton>
-    }
-
+    <MudCarousel TData="object" AutoCycle="true" Style="justify-self: center; width: 90%; height: 400px;">
+        @foreach (var product in _productsList)
+        {
+            <MudCarouselItem Style="display: flex; justify-content: center;">
+                <MudImage Src="\Images\monitor_img.jpg"
+                          Fluid="true"
+                          @onclick="() => GoToProductPage(product.Id)"/>
+            </MudCarouselItem>
+        }
+    </MudCarousel>
 }
 
 @code {

@@ -635,6 +635,7 @@ C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\Ecomm
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\Ecommerce2.Client.AssemblyInfo.cs
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\Ecommerce2.Client.csproj.CoreCompileInputs.cache
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\Ecommerce2.Client.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\Ecommerce2.Client.sourcelink.json
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Authorization.wasm
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.wasm
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.Forms.wasm
@@ -1042,8 +1043,11 @@ C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compr
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\m928arzs00-tptq2av103.gz
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\gzv9452xz0-lfu7j35m59.gz
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\xbfpezxl1c-oyz0vx2fzb.gz
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\69b1jem195-o7u25n3ac3.gz
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\the2jhc3ud-043s0lcd5y.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\69b1jem195-lcfd4dnjhb.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\the2jhc3ud-kel5gre8xy.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\jnrzi08m3z-ehfbbu5eig.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\dyobv1dyug-nt7c44usdf.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\td887k7y44-32tqzfc4mj.gz
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\staticwebassets.development.json
@@ -1054,6 +1058,3 @@ C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\Ecomm
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\refint\Ecommerce2.Client.dll
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\Ecommerce2.Client.pdb
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\ref\Ecommerce2.Client.dll
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\jnrzi08m3z-mnr813pgvt.gz
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\dyobv1dyug-ha8dvcr9op.gz
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\td887k7y44-nvu518wewm.gz
