@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "ECommerce - PROD",
+    "Projects": [
+      {
+        "Path": "ECommerce.Api\\ECommerce.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Ecommerce2\\Ecommerce2.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

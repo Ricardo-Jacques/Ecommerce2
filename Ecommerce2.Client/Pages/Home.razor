@@ -1,0 +1,40 @@
+﻿@using ECommerce2.Client.Interfaces
+@using ECommerce2.Shared.Dtos
+
+@inject NavigationManager Navigation
+@inject IProductService ProductService
+
+@page "/"
+
+@if (_isLoading)
+{
+    <MudProgressLinear />
+} else
+{
+    <PageTitle>Home</PageTitle>
+
+    @foreach (var product in _productsList)
+    {
+        <MudText Typo="Typo.h5">@product.Name</MudText>
+        <MudText Typo="Typo.subtitle2">@product.Price.ToString("C")</MudText>
+        <MudButton OnClick="() => GoToProductPage(product.Id)">Ver Produto</MudButton>
+    }
+
+}
+
+@code {
+    private IEnumerable<ProductDto> _productsList = new List<ProductDto>();
+    private bool _isLoading = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _isLoading = true;
+        _productsList = await ProductService.GetAll();
+        _isLoading = false;
+    }
+
+    private void GoToProductPage(Guid id)
+    {
+       Navigation.NavigateTo($"product/{id}");
+    }
+}
