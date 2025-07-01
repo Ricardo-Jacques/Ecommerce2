@@ -19,7 +19,7 @@ namespace ECommerce.Server.Controllers
             _logger = logger;
         }
 
-        [HttpPost("{paymentTicketDto}")]
+        [HttpPost]
         public async Task<ActionResult> Post(PaymentTicketDto paymentTicketDto)
         {
             try

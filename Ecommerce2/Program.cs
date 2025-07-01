@@ -14,12 +14,13 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
+builder.Services.AddScoped(sp => new HttpClient
+{
+	BaseAddress = new Uri("https://localhost:7055/")
+});
+
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IPaymentTicketService, PaymentTicketService>();
-builder.Services.AddHttpClient<IProductService, ProductService>(client =>
-{
-    client.BaseAddress = new Uri("https://localhost:7055/");
-});
 
 var app = builder.Build();
 

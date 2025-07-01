@@ -1053,8 +1053,8 @@ C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\Ecomm
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\refint\Ecommerce2.Client.dll
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\Ecommerce2.Client.pdb
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\ref\Ecommerce2.Client.dll
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\69b1jem195-hmpl38ibt2.gz
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\the2jhc3ud-1kwsmwukc0.gz
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\jnrzi08m3z-4h67lrrirj.gz
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\dyobv1dyug-imskmw59ku.gz
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\td887k7y44-zp3ih4by53.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\69b1jem195-qj6376pp7n.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\the2jhc3ud-vaws4w39or.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\jnrzi08m3z-dwh6yfm8g9.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\dyobv1dyug-qu5ekx1xnw.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\td887k7y44-ml9dnh4hxv.gz

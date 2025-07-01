@@ -1,8 +1,5 @@
 ﻿using ECommerce2.Client.Interfaces;
 using ECommerce2.Shared.Dtos;
-using System.Globalization;
-using System.Net.Http;
-using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 
@@ -23,7 +20,11 @@ namespace Ecommerce2.Client.Services
 			var content = new StringContent(json, Encoding.UTF8, "application/json");
 
 			var response = await _httpClient.PostAsync("PaymentTicket", content);
-			response.EnsureSuccessStatusCode();
+			if (!response.IsSuccessStatusCode)
+			{
+				var error = await response.Content.ReadAsStringAsync();
+				Console.WriteLine("Erro: " + error);
+			}			
 
 			return response.IsSuccessStatusCode;
 		}
@@ -78,10 +79,11 @@ namespace Ecommerce2.Client.Services
 				var content = new FormUrlEncodedContent(form);
 
 				var response = await _httpClient.PostAsync("https://sandbox.boletocloud.com/api/v1/boletos", content);
-				response.EnsureSuccessStatusCode();
-				if (response.IsSuccessStatusCode)
+				if (!response.IsSuccessStatusCode)
 				{
-					Console.WriteLine("Funcionou!");
+					var errorContent = await response.Content.ReadAsStringAsync();
+					Console.WriteLine("Erro na requisição:");
+					Console.WriteLine(errorContent);
 				}
 
 				return response.IsSuccessStatusCode;

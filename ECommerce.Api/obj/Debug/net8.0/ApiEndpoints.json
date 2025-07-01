@@ -2,7 +2,7 @@
   {
     "ContainingType": "ECommerce.Server.Controllers.PaymentTicketController",
     "Method": "Post",
-    "RelativePath": "PaymentTicket/{paymentTicketDto}",
+    "RelativePath": "PaymentTicket",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -10,11 +10,6 @@
       {
         "Name": "paymentTicketDto",
         "Type": "ECommerce2.Shared.Dtos.PaymentTicketDto",
-        "IsRequired": true
-      },
-      {
-        "Name": "paymentTicketDto",
-        "Type": "",
         "IsRequired": true
       }
     ],

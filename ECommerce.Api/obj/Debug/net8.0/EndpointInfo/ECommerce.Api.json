@@ -5,20 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/PaymentTicket/{paymentTicketDto}": {
+    "/PaymentTicket": {
       "post": {
         "tags": [
           "PaymentTicket"
-        ],
-        "parameters": [
-          {
-            "name": "paymentTicketDto",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "requestBody": {
           "content": {
