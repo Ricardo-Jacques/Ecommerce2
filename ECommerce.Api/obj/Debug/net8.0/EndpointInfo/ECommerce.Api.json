@@ -5,7 +5,86 @@
     "version": "1.0"
   },
   "paths": {
-    "/Product": {
+    "/PaymentTicket/{paymentTicketDto}": {
+      "post": {
+        "tags": [
+          "PaymentTicket"
+        ],
+        "parameters": [
+          {
+            "name": "paymentTicketDto",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentTicketDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentTicketDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentTicketDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/PaymentTicket/get-all": {
+      "get": {
+        "tags": [
+          "PaymentTicket"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProductDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Product/{id}": {
       "get": {
         "tags": [
           "Product"
@@ -13,7 +92,8 @@
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -85,6 +165,132 @@
   },
   "components": {
     "schemas": {
+      "PaymentTicketDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "bank": {
+            "type": "string",
+            "nullable": true
+          },
+          "agency": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "wallet": {
+            "type": "string",
+            "nullable": true
+          },
+          "beneficiaryName": {
+            "type": "string",
+            "nullable": true
+          },
+          "beneficiaryCprf": {
+            "type": "string",
+            "nullable": true
+          },
+          "beneficiaryAddressCep": {
+            "type": "string",
+            "nullable": true
+          },
+          "beneficiaryAddressUf": {
+            "type": "string",
+            "nullable": true
+          },
+          "beneficiaryAddressLocality": {
+            "type": "string",
+            "nullable": true
+          },
+          "beneficiaryAddressNeighborhood": {
+            "type": "string",
+            "nullable": true
+          },
+          "beneficiaryAddressStreet": {
+            "type": "string",
+            "nullable": true
+          },
+          "beneficiaryAddressNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "beneficiaryAddresscomplement": {
+            "type": "string",
+            "nullable": true
+          },
+          "ticketCreated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ticketDueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ticketDocument": {
+            "type": "string",
+            "nullable": true
+          },
+          "ticketNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "ticketTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "ticketValue": {
+            "type": "number",
+            "format": "double"
+          },
+          "ticketInstruction": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerCprf": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerAddressCep": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerAddressUf": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerAddressLocality": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerAddressNeighborhood": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerAddressStreet": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerAddressNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "payerAddresscomplement": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ProductDto": {
         "type": "object",
         "properties": {
@@ -104,7 +310,7 @@
             "type": "string",
             "nullable": true
           },
-          "description": {
+          "photo": {
             "type": "string",
             "nullable": true
           }

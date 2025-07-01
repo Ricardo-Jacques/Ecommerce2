@@ -1,7 +1,9 @@
 ﻿@using ECommerce2.Client.Interfaces
 @using ECommerce2.Shared.Dtos
 
+@inject ISnackbar Snackbar
 @inject IProductService ProductService
+@inject IPaymentTicketService PaymentTicketService
 
 @page "/product/{ProductId:guid}"
 
@@ -44,7 +46,8 @@ else
                 </MudStack>
             
                 <MudButton Variant="Variant.Filled"
-                           Color="Color.Success">
+                           Color="Color.Success"
+                           OnClick="Buy">
                     Comprar
                 </MudButton>
             </MudStack>
@@ -69,5 +72,60 @@ else
     {
         double salePrice = _productDto.Price - _productDto.Price * 0.15;
         return salePrice.ToString("F2");
+    }
+
+    private async Task Buy()
+    {
+        PaymentTicketDto paymentTicketDto = CreatePaymentTicket();
+        bool result = await PaymentTicketService.CreateNewTicket(paymentTicketDto);
+        if (result)
+        {
+            await PaymentTicketService.Post(paymentTicketDto);
+            Snackbar.Add("Boleto gerado com sucesso", Severity.Success);
+        } else
+        {
+            Snackbar.Add("Erro ao gerar boleto", Severity.Error);
+        }
+    }
+
+    private PaymentTicketDto CreatePaymentTicket()
+    {
+        var paymentTicketDto = new PaymentTicketDto
+        {
+            Bank = "237",
+            Agency = "3125-9",
+            AccountNumber = "21113-3",
+            Wallet = "12",
+
+            BeneficiaryName = "Ricardo Jacques",
+            BeneficiaryCprf = "05474391056",
+            BeneficiaryAddressCep = "Rua Capão da Canoa",
+            BeneficiaryAddressUf = "RS",
+            BeneficiaryAddressLocality = "Canoas",
+            BeneficiaryAddressNeighborhood = "Estância Velha",
+            BeneficiaryAddressStreet = "Capão da Canoa",
+            BeneficiaryAddressNumber = "741",
+            BeneficiaryAddresscomplement = "Próximo a Vidraçaria Boqueirão",
+
+            TicketCreated = DateTime.UtcNow,
+            TicketDueDate = DateTime.UtcNow.AddDays(2),
+            TicketDocument = "EX1",
+            TicketNumber = "1",
+            TicketTitle = "Teste Serviço API",
+            TicketValue = 350.30,
+            TicketInstruction = "Teste boleto",
+
+            PayerName = "Daniel",
+            PayerCprf = "02354715936",
+            PayerAddressCep = "92032-080",
+            PayerAddressUf = "RS",
+            PayerAddressLocality = "Canoas",
+            PayerAddressNeighborhood = "Estância Velha",
+            PayerAddressStreet = "Capão da Canoa",
+            PayerAddressNumber = "741",
+            PayerAddresscomplement = "Próximo a Vidraçaria Boqueirão",
+        };
+
+        return paymentTicketDto;
     }
 }

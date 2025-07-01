@@ -18,7 +18,7 @@ namespace ECommerce2.Client.Services
         {
             try
             {
-                var response = await _httpClient.GetAsync($"Product/get/{id}");
+                var response = await _httpClient.GetAsync($"Product/{id}");
                 response.EnsureSuccessStatusCode();
                 var products = await response.Content.ReadFromJsonAsync<ProductDto>();
 

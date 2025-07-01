@@ -22,6 +22,134 @@ namespace ECommerce.Server.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("ECommerce.Api.Data.Entities.PaymentTicket", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("AccountNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Agency")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Bank")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("BeneficiaryAddressCep")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("BeneficiaryAddressLocality")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("BeneficiaryAddressNeighborhood")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("BeneficiaryAddressNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("BeneficiaryAddressStreet")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("BeneficiaryAddressUf")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("BeneficiaryAddresscomplement")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("BeneficiaryCprf")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("BeneficiaryName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PayerAddressCep")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PayerAddressLocality")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PayerAddressNeighborhood")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PayerAddressNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PayerAddressStreet")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PayerAddressUf")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PayerAddresscomplement")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PayerCprf")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PayerName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("TicketCreated")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("TicketDocument")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("TicketDueDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("TicketInstruction")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TicketNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TicketTitle")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<double>("TicketValue")
+                        .HasColumnType("double precision");
+
+                    b.Property<string>("Wallet")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("bank")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PaymentTickets");
+                });
+
             modelBuilder.Entity("ECommerce.Shared.Data.Entities.Product", b =>
                 {
                     b.Property<Guid>("Id")
@@ -32,11 +160,11 @@ namespace ECommerce.Server.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Photo")
                         .IsRequired()
                         .HasColumnType("text");
 

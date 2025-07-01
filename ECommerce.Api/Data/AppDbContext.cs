@@ -1,4 +1,5 @@
-﻿using ECommerce.Shared.Data.Entities;
+﻿using ECommerce.Api.Data.Entities;
+using ECommerce.Shared.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.Server.Data
@@ -9,5 +10,6 @@ namespace ECommerce.Server.Data
             : base(options) { }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<PaymentTicket> PaymentTickets { get; set; }
     }
 }

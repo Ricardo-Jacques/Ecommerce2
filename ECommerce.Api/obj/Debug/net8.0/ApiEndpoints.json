@@ -1,8 +1,49 @@
 [
   {
+    "ContainingType": "ECommerce.Server.Controllers.PaymentTicketController",
+    "Method": "Post",
+    "RelativePath": "PaymentTicket/{paymentTicketDto}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "paymentTicketDto",
+        "Type": "ECommerce2.Shared.Dtos.PaymentTicketDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "paymentTicketDto",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ECommerce.Server.Controllers.PaymentTicketController",
+    "Method": "GetAllProducts",
+    "RelativePath": "PaymentTicket/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ECommerce2.Shared.Dtos.ProductDto, ECommerce2.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ECommerce.Server.Controllers.ProductController",
     "Method": "Get",
-    "RelativePath": "Product",
+    "RelativePath": "Product/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -10,7 +51,7 @@
       {
         "Name": "id",
         "Type": "System.Guid",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [

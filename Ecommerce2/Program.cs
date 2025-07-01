@@ -1,3 +1,4 @@
+using Ecommerce2.Client.Services;
 using Ecommerce2.Components;
 using ECommerce2.Client.Interfaces;
 using ECommerce2.Client.Services;
@@ -14,6 +15,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IPaymentTicketService, PaymentTicketService>();
 builder.Services.AddHttpClient<IProductService, ProductService>(client =>
 {
     client.BaseAddress = new Uri("https://localhost:7055/");
