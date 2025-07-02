@@ -131,10 +131,10 @@ C:\Users\Master\source\repos\Ecommerce2\ECommerce.Api\obj\Debug\net8.0\staticweb
 C:\Users\Master\source\repos\Ecommerce2\ECommerce.Api\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\Master\source\repos\Ecommerce2\ECommerce.Api\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Master\source\repos\Ecommerce2\ECommerce.Api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Master\source\repos\Ecommerce2\ECommerce.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Master\source\repos\Ecommerce2\ECommerce.Api\obj\Debug\net8.0\ECommerc.4A86E8C6.Up2Date
 C:\Users\Master\source\repos\Ecommerce2\ECommerce.Api\obj\Debug\net8.0\ECommerce.Api.dll
 C:\Users\Master\source\repos\Ecommerce2\ECommerce.Api\obj\Debug\net8.0\refint\ECommerce.Api.dll
 C:\Users\Master\source\repos\Ecommerce2\ECommerce.Api\obj\Debug\net8.0\ECommerce.Api.pdb
 C:\Users\Master\source\repos\Ecommerce2\ECommerce.Api\obj\Debug\net8.0\ECommerce.Api.genruntimeconfig.cache
 C:\Users\Master\source\repos\Ecommerce2\ECommerce.Api\obj\Debug\net8.0\ref\ECommerce.Api.dll
-C:\Users\Master\source\repos\Ecommerce2\ECommerce.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

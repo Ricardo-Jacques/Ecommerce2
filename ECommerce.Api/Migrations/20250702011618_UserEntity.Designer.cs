@@ -3,6 +3,7 @@ using System;
 using ECommerce.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ECommerce.Server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250702011618_UserEntity")]
+    partial class UserEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -160,10 +163,6 @@ namespace ECommerce.Server.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("AddressComplement")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<string>("AddressLocality")
                         .IsRequired()
                         .HasColumnType("text");
@@ -184,19 +183,15 @@ namespace ECommerce.Server.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Addresscomplement")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Cpf")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("text");
 

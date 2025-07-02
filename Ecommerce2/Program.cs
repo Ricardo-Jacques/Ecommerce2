@@ -21,6 +21,7 @@ builder.Services.AddScoped(sp => new HttpClient
 
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IPaymentTicketService, PaymentTicketService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 

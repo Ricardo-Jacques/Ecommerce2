@@ -4,6 +4,7 @@
 @inject ISnackbar Snackbar
 @inject IProductService ProductService
 @inject IPaymentTicketService PaymentTicketService
+@inject IUserService UserService
 
 @page "/product/{ProductId:guid}"
 
@@ -59,12 +60,15 @@ else
     [Parameter] public Guid ProductId { get; set; }
 
     private ProductDto _productDto = new();
+    private UserDto _userDto = new();
     private bool _isLoading = false;
 
     protected override async Task OnInitializedAsync()
     {
         _isLoading = true;
         _productDto = await ProductService.Get(ProductId);
+        _userDto = await UserService.GetLoggedUser("julia@gmail.com");
+
         _isLoading = false;
     }
 
@@ -107,25 +111,41 @@ else
             BeneficiaryAddressNumber = "741",
             BeneficiaryAddresscomplement = "Próximo a Vidraçaria Boqueirão",
 
-            TicketCreated = DateTime.UtcNow,
-            TicketDueDate = DateTime.UtcNow.AddDays(2),
+            TicketCreated = DateTime.Now,
+            TicketDueDate = DateTime.Now.AddDays(2),
             TicketDocument = "EX1",
-            TicketNumber = "12345678903-P",
+            TicketNumber = "12345678905-P",
             TicketTitle = "DM",
-            TicketValue = 350.30,
+            TicketValue = _productDto.Price,
             TicketInstruction = "Teste boleto",
 
-            PayerName = "Daniel",
-            PayerCprf = "05474391056",
-            PayerAddressCep = "92032-080",
-            PayerAddressUf = "RS",
-            PayerAddressLocality = "Canoas",
-            PayerAddressNeighborhood = "Estância Velha",
-            PayerAddressStreet = "Capão da Canoa",
-            PayerAddressNumber = "741",
-            PayerAddresscomplement = "Próximo a Vidraçaria Boqueirão",
+            PayerName = _userDto.Name,
+            PayerCprf = FormatCpf(_userDto.Cpf),
+            PayerAddressCep = FormatCep(_userDto.AddressCep),
+            PayerAddressUf = _userDto.AddressUf,
+            PayerAddressLocality = _userDto.AddressLocality,
+            PayerAddressNeighborhood = _userDto.AddressNeighborhood,
+            PayerAddressStreet = _userDto.AddressStreet,
+            PayerAddressNumber = _userDto.AddressNumber,
+            PayerAddresscomplement = _userDto.AddressComplement,
         };
 
         return paymentTicketDto;
+    }
+
+    private static string FormatCpf(string cpf)
+    {
+        if (string.IsNullOrWhiteSpace(cpf) || cpf.Length != 11)
+            return cpf;
+
+        return $"{cpf.Substring(0, 3)}.{cpf.Substring(3, 3)}.{cpf.Substring(6, 3)}-{cpf.Substring(9, 2)}";
+    }
+
+    private static string FormatCep(string cep)
+    {
+        if (string.IsNullOrWhiteSpace(cep) || cep.Length != 8)
+            return cep; // ou lançar exceção, ou retornar string.Empty
+
+        return $"{cep.Substring(0, 5)}-{cep.Substring(5, 3)}";
     }
 }
