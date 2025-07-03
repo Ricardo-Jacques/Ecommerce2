@@ -72,3 +72,6 @@ C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\stati
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\staticwebassets.build.json

@@ -1,5 +1,7 @@
 ﻿@inherits LayoutComponentBase
 
+@inject NavigationManager Navigation
+
 <MudThemeProvider Theme="@_theme" IsDarkMode="_isDarkMode" />
 <MudPopoverProvider />
 <MudDialogProvider />
@@ -21,6 +23,7 @@
                 <MudMenuItem>Cama</MudMenuItem>
             </MudMenu>
         </MudStack>
+        <MudIconButton OnClick="Logout" Icon="@Icons.Material.Filled.Logout" Style="position: absolute; right: 50px;" />
     </MudAppBar>
     <MudMainContent Class="mt-16 pa-4">
         @Body
@@ -92,6 +95,11 @@
         true => Icons.Material.Rounded.AutoMode,
         false => Icons.Material.Outlined.DarkMode,
     };
+
+    private void Logout()
+    {
+        Navigation.NavigateTo("/");
+    }
 }
 
 

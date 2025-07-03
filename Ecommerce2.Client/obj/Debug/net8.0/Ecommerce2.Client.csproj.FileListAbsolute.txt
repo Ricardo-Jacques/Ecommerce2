@@ -1060,6 +1060,6 @@ C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\webci
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\7n263j212i-12n6dz54qr.gz
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\69b1jem195-19ox9wt5w5.gz
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\the2jhc3ud-b2w5bq5gud.gz
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\jnrzi08m3z-6klzz4jkyi.gz
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\dyobv1dyug-mbh1o3iwjv.gz
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\td887k7y44-9qx04rwa7q.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\jnrzi08m3z-1u4wvoex8w.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\dyobv1dyug-f03dn91j16.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\td887k7y44-f4vsy19lyq.gz
