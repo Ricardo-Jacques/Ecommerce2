@@ -1,5 +1,36 @@
 [
   {
+    "ContainingType": "ECommerce.Server.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "Auth/login/{email}/{password}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ECommerce.Server.Controllers.PaymentTicketController",
     "Method": "Post",
     "RelativePath": "PaymentTicket",

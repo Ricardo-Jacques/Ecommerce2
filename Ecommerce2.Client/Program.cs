@@ -1,3 +1,4 @@
+using Blazored.LocalStorage;
 using ECommerce2.Client.Interfaces;
 using ECommerce2.Client.Services;
 using Microsoft.AspNetCore.Components;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
 builder.Services.AddMudServices();
+builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddScoped(sp => new HttpClient
 {
     BaseAddress = new Uri(sp.GetRequiredService<NavigationManager>().BaseUri)

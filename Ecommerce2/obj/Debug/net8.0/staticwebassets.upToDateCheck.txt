@@ -1,3 +1,4 @@
 wwwroot\Css\Global.css
 wwwroot\favicon.ico
 wwwroot\Images\monitor_img.jpg
+wwwroot\Images\teclado_img.jpg

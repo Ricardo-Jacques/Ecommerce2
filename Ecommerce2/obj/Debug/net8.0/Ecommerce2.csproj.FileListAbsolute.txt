@@ -162,3 +162,4 @@ C:\Users\Master\source\repos\Ecommerce2\Ecommerce2\obj\Debug\net8.0\refint\Ecomm
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2\obj\Debug\net8.0\Ecommerce2.pdb
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2\obj\Debug\net8.0\Ecommerce2.genruntimeconfig.cache
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2\obj\Debug\net8.0\ref\Ecommerce2.dll
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2\bin\Debug\net8.0\Blazored.LocalStorage.dll

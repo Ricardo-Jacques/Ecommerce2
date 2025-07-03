@@ -42,8 +42,8 @@ namespace ECommerce.Server.Controllers
 					BeneficiaryAddressNumber = paymentTicketDto.BeneficiaryAddressNumber,
 					BeneficiaryAddresscomplement = paymentTicketDto.BeneficiaryAddresscomplement,
 
-					TicketCreated = paymentTicketDto.TicketCreated,
-					TicketDueDate = paymentTicketDto.TicketDueDate,
+					TicketCreated = paymentTicketDto.TicketCreated.ToUniversalTime(),
+					TicketDueDate = paymentTicketDto.TicketDueDate.ToUniversalTime(),
 					TicketDocument = paymentTicketDto.TicketDocument,
 					TicketNumber = paymentTicketDto.TicketNumber,
 					TicketTitle = paymentTicketDto.TicketTitle,

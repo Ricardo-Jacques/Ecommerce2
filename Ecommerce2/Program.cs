@@ -1,3 +1,4 @@
+using Blazored.LocalStorage;
 using Ecommerce2.Client.Services;
 using Ecommerce2.Components;
 using ECommerce2.Client.Interfaces;
@@ -19,9 +20,12 @@ builder.Services.AddScoped(sp => new HttpClient
 	BaseAddress = new Uri("https://localhost:7055/")
 });
 
+builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IPaymentTicketService, PaymentTicketService>();
 builder.Services.AddScoped<IUserService, UserService>();
+
+builder.Services.AddBlazoredLocalStorage();
 
 var app = builder.Build();
 

@@ -1,0 +1,44 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider Theme="@_theme" IsDarkMode="false" />
+<MudSnackbarProvider />
+<MudLayout>
+    <MudMainContent Class="login-layout">
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+<style>
+    .login-layout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
+</style>
+
+@code {
+    private MudTheme? _theme = null;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        _theme = new()
+        {
+            PaletteLight = _lightPalette,
+            LayoutProperties = new LayoutProperties()
+        };
+    }
+
+    private readonly PaletteLight _lightPalette = new()
+    {
+        Black = "#110e2d",
+        AppbarText = "#424242",
+        AppbarBackground = "rgba(255,255,255,0.8)",
+        DrawerBackground = "#ffffff",
+        GrayLight = "#e8e8e8",
+        GrayLighter = "#f9f9f9",
+    };
+}

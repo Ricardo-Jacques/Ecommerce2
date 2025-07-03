@@ -1,6 +1,6 @@
-﻿@using ECommerce2.Client.Interfaces
-@using ECommerce2.Shared.Dtos
+﻿@using Blazored.LocalStorage
 
+@inject ILocalStorageService LocalStorage
 @inject ISnackbar Snackbar
 @inject IProductService ProductService
 @inject IPaymentTicketService PaymentTicketService
@@ -16,7 +16,7 @@ else
 {
     <MudContainer Class="page-container">
         <MudStack Row="true">
-            <MudImage Src="\Images\monitor_img.jpg" 
+            <MudImage Src="@($"data:image/jpeg;base64,{_productDto.Photo}")"
                       Alt="Foto do produto"
                       Style="width: 45%;"/>
 
@@ -66,9 +66,13 @@ else
     protected override async Task OnInitializedAsync()
     {
         _isLoading = true;
-        _productDto = await ProductService.Get(ProductId);
-        _userDto = await UserService.GetLoggedUser("julia@gmail.com");
+        var userEmail = await LocalStorage.GetItemAsStringAsync("UserEmail");
+        if (userEmail != null)
+        {
+            _userDto = await UserService.GetLoggedUser(userEmail);
+        }
 
+        _productDto = await ProductService.Get(ProductId);
         _isLoading = false;
     }
 
@@ -114,7 +118,7 @@ else
             TicketCreated = DateTime.Now,
             TicketDueDate = DateTime.Now.AddDays(2),
             TicketDocument = "EX1",
-            TicketNumber = "12345678905-P",
+            TicketNumber = GenerateTicketNumber(),
             TicketTitle = "DM",
             TicketValue = _productDto.Price,
             TicketInstruction = "Teste boleto",
@@ -147,5 +151,14 @@ else
             return cep; // ou lançar exceção, ou retornar string.Empty
 
         return $"{cep.Substring(0, 5)}-{cep.Substring(5, 3)}";
+    }
+
+    private static string GenerateTicketNumber()
+    {
+        Random random = new Random();
+        
+        string ticketNumber = random.Next(0, 1000000000).ToString("D9") + random.Next(0, 100).ToString("D2");
+
+        return $"{ticketNumber}-P";
     }
 }

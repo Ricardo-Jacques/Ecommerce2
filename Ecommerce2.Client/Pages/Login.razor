@@ -1,0 +1,54 @@
+﻿@layout LoginLayout
+@page "/"
+
+@using Blazored.LocalStorage
+
+@inject NavigationManager Navigation
+@inject ILocalStorageService LocalStorage
+@inject ISnackbar Snackbar
+@inject IAuthService AuthService
+
+<MudStack Style="width: 500px; justify-self: center;">
+    <MudTextField @bind-Value="_email" 
+                  Variant="Variant.Outlined"
+                  Margin="Margin.Dense"
+                  Label="Email" />
+
+    <MudTextField @bind-Value="_password" 
+                  Variant="Variant.Outlined"
+                  Margin="Margin.Dense"
+                  Label="Senha" />
+
+    <MudButton OnClick="AuthenticateUser"
+               Color="Color.Success" 
+               Variant="Variant.Filled">
+        Entrar
+    </MudButton>
+</MudStack>
+
+@code {
+    private string? _email { get; set; }
+    private string? _password { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await LocalStorage.ClearAsync();
+    }
+
+    private async Task AuthenticateUser()
+    {
+        if (!string.IsNullOrEmpty(_email) && !string.IsNullOrEmpty(_password))
+        {
+            bool result = await AuthService.Login(_email, _password);
+
+            if (result)
+            {
+                await LocalStorage.SetItemAsStringAsync("UserEmail", _email);
+                Navigation.NavigateTo("/home");
+            } else
+            {
+                Snackbar.Add("Usuário ou senha incorretos", Severity.Error);
+            }
+        }
+    }
+}

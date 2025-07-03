@@ -7,7 +7,6 @@
        public string Bank { get; set; } = string.Empty;
        public string Agency { get; set; } = string.Empty;
        public string AccountNumber { get; set; } = string.Empty;
-       public string bank { get; set; } = string.Empty;
        public string Wallet { get; set; } = string.Empty;
 
 	   //Beneficiary

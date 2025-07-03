@@ -4,7 +4,7 @@
 @inject NavigationManager Navigation
 @inject IProductService ProductService
 
-@page "/"
+@page "/home"
 
 @if (_isLoading)
 {
@@ -16,7 +16,8 @@
         @foreach (var product in _productsList)
         {
             <MudCarouselItem Style="display: flex; justify-content: center;">
-                <MudImage Src="\Images\monitor_img.jpg"
+                <MudImage Src="@($"data:image/jpeg;base64,{product.Photo}")"
+                          Alt="Foto do produto"
                           Fluid="true"
                           @onclick="() => GoToProductPage(product.Id)"/>
             </MudCarouselItem>

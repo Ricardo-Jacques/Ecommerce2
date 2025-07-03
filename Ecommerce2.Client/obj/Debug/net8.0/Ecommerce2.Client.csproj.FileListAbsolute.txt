@@ -1043,8 +1043,6 @@ C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compr
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\m928arzs00-tptq2av103.gz
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\gzv9452xz0-lfu7j35m59.gz
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\xbfpezxl1c-oyz0vx2fzb.gz
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\69b1jem195-0i6etm1nbn.gz
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\the2jhc3ud-svgexrbxki.gz
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\staticwebassets.development.json
@@ -1055,6 +1053,13 @@ C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\Ecomm
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\refint\Ecommerce2.Client.dll
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\Ecommerce2.Client.pdb
 C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\ref\Ecommerce2.Client.dll
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\jnrzi08m3z-i6ikj7h081.gz
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\dyobv1dyug-slu8hbk8rf.gz
-C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\td887k7y44-mwbrxpqy64.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\bin\Debug\net8.0\wwwroot\_framework\Blazored.LocalStorage.wasm
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\bin\Debug\net8.0\wwwroot\_framework\Blazored.LocalStorage.wasm.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\bin\Debug\net8.0\Blazored.LocalStorage.dll
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\webcil\Blazored.LocalStorage.wasm
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\7n263j212i-12n6dz54qr.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\69b1jem195-81rzf7aa4e.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\the2jhc3ud-o5bz7cgh9k.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\jnrzi08m3z-sw62l5pr2i.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\dyobv1dyug-rj28rcoku4.gz
+C:\Users\Master\source\repos\Ecommerce2\Ecommerce2.Client\obj\Debug\net8.0\compressed\td887k7y44-4j3qqxs4kc.gz

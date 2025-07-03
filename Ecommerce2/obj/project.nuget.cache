@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jdy2tFdq/NE=",
+  "dgSpecHash": "ajiToYXEiFQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\Master\\source\\repos\\Ecommerce2\\Ecommerce2\\Ecommerce2.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Master\\.nuget\\packages\\blazored.localstorage\\4.5.0\\blazored.localstorage.4.5.0.nupkg.sha512",
     "C:\\Users\\Master\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Master\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.17\\microsoft.aspnetcore.authorization.8.0.17.nupkg.sha512",
     "C:\\Users\\Master\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.17\\microsoft.aspnetcore.components.8.0.17.nupkg.sha512",
