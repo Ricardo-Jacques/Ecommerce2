@@ -51,6 +51,13 @@ else
                            OnClick="Buy">
                     Comprar
                 </MudButton>
+
+                @if (_pdfUrl != null)
+                {
+                    <a href="@_pdfUrl" target="_blank" download="boleto.pdf" style="display: flex; justify-content: center; color: #ffffff; background-color: #594ae2; padding: 6px 16px; border-radius: 4px; font-variant: all-petite-caps; font-weight: bold;">
+                        Clique aqui para baixar o boleto
+                    </a>
+                }
             </MudStack>
         </MudStack>
     </MudContainer>
@@ -61,6 +68,7 @@ else
 
     private ProductDto _productDto = new();
     private UserDto _userDto = new();
+    private string? _pdfUrl;
     private bool _isLoading = false;
 
     protected override async Task OnInitializedAsync()
@@ -85,10 +93,13 @@ else
     private async Task Buy()
     {
         PaymentTicketDto paymentTicketDto = CreatePaymentTicket();
-        bool result = await PaymentTicketService.CreateNewTicket(paymentTicketDto);
-        if (result)
-        {
+        var result = await PaymentTicketService.CreateNewTicket(paymentTicketDto);
+        if (result != null)
+        {            
+            var base64 = Convert.ToBase64String(result);
+            _pdfUrl = $"data:application/pdf;base64,{base64}";
             await PaymentTicketService.Post(paymentTicketDto);
+
             Snackbar.Add("Boleto gerado com sucesso", Severity.Success);
         } else
         {

@@ -1,5 +1,6 @@
 ﻿using ECommerce2.Client.Interfaces;
 using ECommerce2.Shared.Dtos;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 
@@ -29,7 +30,7 @@ namespace Ecommerce2.Client.Services
 			return response.IsSuccessStatusCode;
 		}
 
-		public async Task<bool> CreateNewTicket(PaymentTicketDto paymentTicketDto)
+		public async Task<byte[]?> CreateNewTicket(PaymentTicketDto paymentTicketDto)
 		{
 			try
 			{
@@ -86,13 +87,27 @@ namespace Ecommerce2.Client.Services
 					Console.WriteLine(errorContent);
 				}
 
-				return response.IsSuccessStatusCode;
+				return await response.Content.ReadAsByteArrayAsync();
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine($"Erro ao gerar boleto: {ex.Message}");
-				return false;
+				return null;
 			}
+		}
+
+		public async Task<byte[]> GetPaymentTicket(string paymentTicketId)
+		{
+			var username = "api-key_T5ttIalQ94NOlJipojqD2fADfR0a9SJ1gqvvbBOmNjw=";
+			var password = "token";
+			var credentials = $"{username}:{password}";
+			var base64Credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(credentials));
+
+			_httpClient.DefaultRequestHeaders.Authorization =
+				new AuthenticationHeaderValue("Basic", base64Credentials);
+
+			var url = $"https://sandbox.boletocloud.com/api/v1/boleto/{paymentTicketId}/pdf";
+			return await _httpClient.GetByteArrayAsync(url);
 		}
 	}
 }
